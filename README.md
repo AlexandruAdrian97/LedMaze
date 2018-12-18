@@ -3,33 +3,34 @@ Arduino Game
 # LedMaze
 
 
-The components of the project:
 
-Arduino Uno;
+                                                #The components of the project:
 
-Matrice 1088AS;
+1.  Arduino Uno;
 
-Driver MAX7219;
+2.  Matrice 1088AS;
 
-LCD;
-
-1x resistor 10k ohm for MAX7219 driver;
-
-1x resistor 220 ohm for LCD;
-
-1x condensator 10 uF;
-
-1x condensator 0.1 uF (100 nF);
-
-Joystick;
-
-Button;
-
-3x Breadboard;
-
-Arduino USB cable;
-
-Jumper wires;
+3.  Driver MAX7219;
     
+4.  LCD;
+    
+5.  1x resistor 10k ohm for MAX7219 driver;
+    
+6. 1x resistor 220 ohm for LCD;
+    
+7. 1x condensator 10 uF;
+    
+8.  1x condensator 0.1 uF (100 nF);
+    
+9.  Joystick;
+    
+10.  Button;
+    
+11. 3x Breadboard;
+    
+12.  Arduino USB cable;
+    
+13.  Jumper wires;
+        
 
 
