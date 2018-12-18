@@ -35,5 +35,16 @@ Arduino Game
     
 13.  Jumper wires;
         
+        
+        # HOW TO PLAY
+ 
+ 
+ The game is called LedMaze so i think you figured out the idea of this game.
+ 
+ All you have to do is to go through three mazes without touching the walls. You control the dot (the character) using a joystick.
+ 
+ You only have 5 lives so take it easy, the levels are getting harder and harder.
+ 
+ Using the joystick you'll have to move the dot from your corner to the opposite one, and you will find out that at the final of the game your score will be your timing through the game.
 
 
