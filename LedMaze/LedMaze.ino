@@ -146,9 +146,9 @@ void scoreTime(long t)
 	lcd.begin(16, 2);
 	lcd.setCursor(4, 0);
 	lcd.print("Scoretime: ");
-	lcd.setCursor(7, 1);
+	lcd.setCursor(5, 1);
 	lcd.print(t / 1000);
-	t = 0;
+	lcd.print(" sec")
 }
 
 void movement()
