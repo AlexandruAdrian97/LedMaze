@@ -4,7 +4,10 @@ Arduino Game
 
 
 
-                                                #The components of the project:
+
+# The components of the project:
+
+                                               
 
 1.  Arduino Uno;
 
