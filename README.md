@@ -50,4 +50,4 @@ Arduino Game
 
   # LINK to the video of the game:
   
-  https://drive.google.com/file/d/1upejdYr9H9jIvSzb3uGIBUAt_iQJ46fS/view
+https://drive.google.com/open?id=159RQVA3xnWkLpqjJALRFqHzUEJ0OBHHl
