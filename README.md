@@ -48,3 +48,6 @@ Arduino Game
  Using the joystick you'll have to move the dot from your corner to the opposite one, and you will find out that at the end of the game your score will be your timing through the game.
 
 
+  # LINK to the video of the game:
+  
+  https://drive.google.com/file/d/1upejdYr9H9jIvSzb3uGIBUAt_iQJ46fS/view
