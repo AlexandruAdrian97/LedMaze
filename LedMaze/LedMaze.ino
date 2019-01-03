@@ -32,8 +32,8 @@ int j;
 
 int level = 0;
 int lives = 5;
-int highScore = 1;
-int scoreLives = 20;
+long highScore = 1;
+long scoreLives = 20;
 
 bool mazeOne[ii][jj] = {
   {0,0,1,1,1,1,1,1},
@@ -123,17 +123,6 @@ bool mazeEight[ii][jj] = {
   {0,1,0,0,0,1,1,1},
   {0,1,1,1,1,1,1,1},
   {0,0,0,0,0,0,0,0},
-};
-
-bool mazeNine[ii][jj] = {
-  {0,0,1,0,0,0,1,0},
-  {1,0,1,0,1,0,1,0},
-  {1,0,0,0,1,0,1,0},
-  {1,1,1,1,1,0,1,0},
-  {0,0,0,0,0,0,1,0},
-  {0,1,1,1,1,1,1,0},
-  {0,1,0,0,0,1,0,0},
-  {0,0,0,1,0,0,0,0},
 };
 
 bool gameOverM[ii][jj] = {
@@ -257,8 +246,6 @@ bool standByM[ii][jj] = {
   {0,1,0,1,1,0,1,0},
 };
 
-
-
 void displayLives(int dsplay)
 {
 	lcd.begin(16, 2);
@@ -267,19 +254,26 @@ void displayLives(int dsplay)
 	lcd.print(dsplay);
 }
 
-void score(int t, int v)
+void displayLevels(int lvls = 0)
+{
+	lcd.begin(16, 2);
+	lcd.print("   Well done!  ");
+	lcd.setCursor(2, 1);
+	lcd.print("Next level: ");
+	lcd.print(lvls);
+}
+
+void score(long _score, long _high)
 {
 	lcd.begin(16, 2);
 	lcd.setCursor(0, 0);
 	lcd.print("Score: ");
-	lcd.setCursor(7, 0);
-	lcd.print(t * 6);
-	lcd.print(" pts");
+	lcd.setCursor(8, 0);
+	lcd.print(_score * 6);
 	lcd.setCursor(0, 1);
-	lcd.print("H. Scr: ");
-	lcd.setCursor(7, 1);
-	lcd.print(v * 6);
-	lcd.print(" pts");
+	lcd.print("HScore: ");
+	lcd.setCursor(8, 1);
+	lcd.print(_high * 6);
 }
 
 void movement()
@@ -290,29 +284,29 @@ void movement()
 	previousX = presentX;
 	previousY = presentY;
 
-	if (xValue > 600)
+	if (xValue > 800)
 	{
 		if (presentX != 7)
 			presentX++;
 	}
 	else
-		if (xValue < 300)
+		if (xValue < 200)
 		{
 			if (presentX != 0)
 				presentX--;
 		}
-	if (yValue > 600)
+	if (yValue > 800)
 	{
 		if (presentY != 7)
 			presentY++;
 	}
 	else
-		if (yValue < 300)
+		if (yValue < 200)
 		{
 			if (presentY != 0)
 				presentY--;
 		}
-	delay(30);
+	delay(40);
 }
 
 int levelOne()
@@ -467,7 +461,7 @@ void levelSwitch()
 		if (digitalRead(button) == 1)
 		{
 			lcd.setCursor(0, 0);
-			lcd.print(" ***Led Maze*** ");
+			lcd.print("*** Led Maze ***");
 			lcd.setCursor(0, 1);
 			lcd.print(" Press to start! ");
 		}
@@ -476,9 +470,14 @@ void levelSwitch()
 		break;
 
 	case 1:
-		lc.clearDisplay(0);
+
 		transitionOne();
-		delay(500); // for the transition between the levels;
+		lcd.clear();
+		lcd.setCursor(0, 0);
+		lcd.print("   Good Luck!   ");
+		lcd.setCursor(0, 1);
+		lcd.print("     Level 1   ");
+		delay(1000); // transition between the levels;
 		level++;
 		break;
 
@@ -516,7 +515,8 @@ void levelSwitch()
 
 	case 3:
 		transitionTwo();
-		delay(500);
+		displayLevels(2);
+		delay(1000); // transition between the levels;
 		level++;
 		break;
 
@@ -554,7 +554,8 @@ void levelSwitch()
 
 	case 5:
 		transitionThree();
-		delay(500);
+		displayLevels(3);
+		delay(1000); // transition between the levels;
 		level++;
 		break;
 
@@ -592,7 +593,8 @@ void levelSwitch()
 
 	case 7:
 		transitionFour();
-		delay(500);
+		displayLevels(4);
+		delay(1000); // transition between the levels;
 		level++;
 		break;
 
@@ -630,7 +632,8 @@ void levelSwitch()
 
 	case 9:
 		transitionFive();
-		delay(500);
+		displayLevels(5);
+		delay(1000); // transition between the levels;
 		level++;
 		break;
 
@@ -667,9 +670,9 @@ void levelSwitch()
 		break;
 
 	case 11:
-		lc.clearDisplay(0);
 		transitionSix();
-		delay(500); // for the transition between the levels;
+		displayLevels(6);
+		delay(1000); // transition between the levels;
 		level++;
 		break;
 
@@ -708,7 +711,8 @@ void levelSwitch()
 
 	case 13:
 		transitionSeven();
-		delay(500);
+		displayLevels(7);
+		delay(1000); // transition between the levels;
 		level++;
 		break;
 
@@ -746,7 +750,8 @@ void levelSwitch()
 
 	case 15:
 		transitionEight();
-		delay(500);
+		displayLevels(8);
+		delay(1000); // transition between the levels;
 		level++;
 		break;
 
@@ -789,9 +794,9 @@ void levelSwitch()
 		{
 			highScore = scoreLives;
 		}
-		delay(2000);
+		delay(2000); //showing highscore
 		score(scoreLives, highScore);
-		delay(2000);
+		delay(2000); //till the game restart
 		level = 0;
 		lives = 5;
 		presentX = 0;
@@ -806,9 +811,9 @@ void levelSwitch()
 		{
 			highScore = scoreLives;
 		}
-		delay(2000);
+		delay(2000); //showing highscore
 		score(scoreLives, highScore);
-		delay(2000);
+		delay(2000); //till the game restart
 		level = 0;
 		lives = 5;
 		presentX = 0;
