@@ -45,9 +45,9 @@ Arduino Game
  
  You only have 5 lives so take it easy, the levels are getting harder and harder.
  
- Using the joystick you'll have to move the dot from your corner to the opposite one, and you will find out that at the end of the game your score will be your timing through the game.
+ Using the joystick you'll have to move the dot from your corner to the opposite one, and you will find out that at the end of the game if your score beat the highScore or not.
 
 
   # LINK to the video of the game:
   
-https://drive.google.com/open?id=159RQVA3xnWkLpqjJALRFqHzUEJ0OBHHl
+https://drive.google.com/open?id=1BuZVcBaDyJpSPm85EJ18KLWV-btqFK0Y
